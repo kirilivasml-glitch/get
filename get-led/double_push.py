@@ -23,14 +23,14 @@ GPIO.setup(leds, GPIO.OUT)
 
 GPIO.output(leds, 0)
 
-GPIO.setup(up,down, GPIO.IN)
+GPIO.setup([up,down] , GPIO.IN)
 
 num = 0
 
 sleep_time = 0.2
 
 if GPIO.input(up):
-   if num<256:
+   if num<255:
     num+=1
     print(num, dec2bin(num))
 
@@ -49,7 +49,7 @@ if GPIO.input(down):
           turn_the_on(leds, dec2bin(num))
           time.sleep(sleep_time)
       else:
-          n = 0
+          num = 0
           print(num, dec2bin(num))
           turn_the_on(leds, dec2bin(num))
           time.sleep(sleep_time)
