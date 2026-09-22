@@ -5,10 +5,8 @@ def dec2bin(value):
     return [int(element) for element in bin(value)[2:].zfill(8)]
 
 def turn_the_on(leds, num_2):
-    for value in str(num_2):
-        i = 0
-        GPIO.output(leds[i] ,int(value))
-        i+=1
+        for i in range(8):
+        GPIO.output(leds[i], num_2[i])
 
 
 
